@@ -1,0 +1,144 @@
+/*= BMI*/
+
+#bmi {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  padding: 25px 250px;
+  gap: 120px;
+}
+
+.bmiCalculator h3 {
+  color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  font-size: bold;
+  font-size: 50px;
+  margin: 15px 0;
+}
+
+.bmiCalculator p {
+  font-size: 16px; /* Yazı boyutu */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300px;
+  color: #666; /* Yazı rengi */
+}
+
+#bmi-form {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/*!BMI İndex Hesaplama*/
+.yourBmi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valueBmi p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/*! Oklar*/
+.bmi-arrow {
+  display: none; /* Başlangıçta ok'u gizle */
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid var(--accent-color); /* okun rengi */
+  margin: 10px;
+}
+
+.bmi-arrow.show {
+  display: block; /* Ok gösterildiğinde görünür */
+}
+
+#underweight-arrow {
+  margin-left: -130px; /*zayıf*/
+}
+#normal-arrow {
+  margin-left: -70px; /*normal*/
+}
+#overweight-arrow {
+  margin-left: 10px; /*kilolu*/
+}
+#obese-arrow {
+  margin-left: 120px; /*obez*/
+}
+#extremely-obese-arrow {
+  margin-left: 235px; /*aşırı obez*/
+}
+
+#bmi-result {
+  color: #666;
+}
+
+/*= Mobil - Responsive Design for BMI Section (max 576px) */
+@media (max-width: 576px) {
+  #bmi {
+    flex-direction: column; /* Dikey hizalama */
+    padding: 20px;
+    gap: 30px; /* Daha küçük boşluk */
+  }
+
+  .bmiCalculator h3 {
+    font-size: 35px; /* Başlığı küçültme */
+  }
+
+  .bmiCalculator p {
+    font-size: 14px; /* Paragraf yazı boyutunu küçültme */
+  }
+
+  #bmi-form {
+    flex-direction: row; /* Form elemanlarını dikey hizalama */
+    gap: 5px;
+  }
+
+  .yourBmi {
+    align-items: center;
+  }
+
+  .valueBmi p {
+    font-size: 16px; /* BMI sonucunun yazı boyutunu küçültme */
+  }
+
+  /* Okların yerleşimi mobilde düzgün görünmesi için */
+  #underweight-arrow {
+    margin-left: -50px;
+  }
+
+  #normal-arrow {
+    margin-left: -20px;
+  }
+
+  #overweight-arrow {
+    margin-left: 20px;
+  }
+
+  #obese-arrow {
+    margin-left: 70px;
+  }
+
+  #extremely-obese-arrow {
+    margin-left: 120px;
+  }
+
+  .arrows {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Oklar arasında boşluk */
+  }
+
+  /* BMI resmi */
+  .yourBmi img {
+    width: 100%; /* Genişliği yüzde yaparak mobil uyumlu hale getirme */
+    height: auto;
+  }
+}

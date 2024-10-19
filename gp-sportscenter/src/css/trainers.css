@@ -1,0 +1,205 @@
+#trainers {
+  background-color: var(--secondary-color);
+  padding: 30px;
+}
+
+.trainer img {
+  display: block;
+  width: 250px;
+  height: 300px;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  border: 3px solid var(--accent-color);
+}
+
+/*! İmage Area */
+.trainerImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.trainer {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  overflow: hidden;
+}
+
+/*! Border animasyonları*/
+/* Dört farklı pseudo-element ile kenarları oluştur.. */
+.trainer::before,
+.trainer::after,
+.trainer .border-top,
+.trainer .border-right,
+.trainer .border-bottom,
+.trainer .border-left {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+/* Üst border */
+.trainer::before {
+  width: 50%;
+  height: 8px; /* Üst border kalınlığı */
+  top: 0;
+  left: 75px;
+}
+
+/* Alt border */
+.trainer::after {
+  width: 50%;
+  height: 8px; /* Alt border kalınlığı */
+  bottom: 0;
+  left: 75px;
+}
+
+/* Sol border */
+.trainer .border-left {
+  width: 8px;
+  height: 50%;
+  top: 100px;
+  left: 0;
+}
+
+/* Sağ border */
+.trainer .border-right {
+  width: 8px;
+  height: 50%;
+  top: 100px;
+  right: 0;
+}
+
+/* Hover efektleri */
+.trainer:hover::before {
+  width: 50%; /* Üst genişler */
+}
+
+.trainer:hover::after {
+  width: 25%; /* Alt genişler */
+}
+
+.trainer:hover .border-left {
+  height: 25%; /* Sol uzar */
+}
+
+.trainer:hover .border-right {
+  height: 25%; /* Sağ uzar */
+}
+
+/*! İsim ve Ünvan*/
+.trainer-name {
+  position: absolute;
+  bottom: 20px; /* alttan 20px yükseklik ver */
+  left: 50%;
+  white-space: nowrap; /* Bir satıra sığdır*/
+  transform: translateX(-50%); /* Ortala.. */
+  padding: 15px 50px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  clip-path: polygon(
+    0% 15%,
+    15% 15%,
+    15% 0%,
+    85% 0%,
+    85% 15%,
+    100% 15%,
+    100% 85%,
+    85% 85%,
+    85% 100%,
+    15% 100%,
+    15% 85%,
+    0% 85%
+  );
+  text-align: center;
+  opacity: 0; /* İlk başta görünmesin */
+  transition: opacity 0.4s ease; /* Geçiş efekti ayarı */
+}
+
+.trainer:hover .trainer-name {
+  opacity: 1; /* Hover sırasında görün */
+}
+
+.trainer-name p {
+  margin: 0;
+  padding: 0;
+}
+
+.trainer-name .title {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/*= Mobil - Responsive Design for Trainer Section (max 576px) */
+/* Responsive Design for Trainers Section (max 576px) */
+@media (max-width: 576px) {
+  #trainers {
+    padding: 20px 15px; /* Daha dar padding */
+  }
+
+  /* Title alignment and font size adjustments */
+  .section-title {
+    font-size: 24px; /* Başlık boyutunu küçült */
+    text-align: center;
+  }
+
+  .section-line {
+    margin: 10px auto; /* Ortala */
+    width: 60px;
+  }
+
+  .section-description {
+    font-size: 14px; /* Açıklama boyutunu küçült */
+    text-align: center; /* Ortala */
+  }
+
+  /* Trainer images alignment and size adjustment */
+  .trainerImg {
+    flex-direction: column; /* Dikey hizala */
+    gap: 20px; /* Aralıkları azalt */
+  }
+
+  .trainer img {
+    width: 200px; /* Genişliği küçült */
+    height: 240px; /* Yüksekliği küçült */
+  }
+
+  /* Trainer name section adjustments */
+  .trainer-name {
+    padding: 10px 30px; /* Padding'i azalt */
+    font-size: 16px; /* Yazı boyutunu küçült */
+  }
+
+  .trainer-name .title {
+    font-size: 12px; /* Ünvan boyutunu küçült */
+  }
+
+  /* Border adjustments */
+  .trainer::before,
+  .trainer::after,
+  .trainer .border-left,
+  .trainer .border-right {
+    background-color: var(--primary-color);
+  }
+
+  .trainer::before {
+    height: 4px; /* Üst border kalınlığı */
+  }
+
+  .trainer::after {
+    height: 4px; /* Alt border kalınlığı */
+  }
+
+  .trainer .border-left,
+  .trainer .border-right {
+    width: 4px; /* Kenar border kalınlığı */
+  }
+}

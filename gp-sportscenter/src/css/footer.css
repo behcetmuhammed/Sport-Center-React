@@ -1,0 +1,102 @@
+#footer {
+  background-color: var(--primary-color);
+  padding: 10px 250px 20px 150px;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.footerText p {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+.footerMenu {
+  display: flex;
+  justify-content: space-around;
+  gap: 35px;
+}
+.footerMenu .infoArea ul,
+.footerMenu .helpArea ul {
+  display: inline;
+}
+
+.footerMenu .infoArea li,
+.footerMenu .helpArea li {
+  list-style-type: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.footerMenu .infoArea li:hover,
+.footerMenu .helpArea li:hover {
+  background-color: var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.footerMenu ul li:first-child {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footerMenu ul li:first-child:hover {
+  border: none;
+  background-color: var(--primary-color);
+  cursor: auto;
+}
+
+/*= Mobil - Responsive Design for Footer Section (max 576px) */
+@media (max-width: 576px) {
+  #footer {
+    padding: 20px 10px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLogo {
+    margin-right: auto; /* Logo sola yasla */
+    align-self: flex-start; /* Logo sola yasla */
+  }
+
+  .footerText p {
+    font-size: 18px;
+    text-align: start;
+    padding: 0 10px;
+  }
+
+  .footerMenu {
+    align-items: center;
+    gap: 150px; /* Aralıkları daralt */
+  }
+
+  .footerMenu .infoArea ul,
+  .footerMenu .helpArea ul {
+    display: flex; /* Yan yana hizala */
+    flex-direction: column; /* Dikey hizala */
+    align-items: start; /* Ortala */
+    padding: 0; /* Padding kaldır */
+  }
+
+  .footerMenu .infoArea li,
+  .footerMenu .helpArea li {
+    font-size: 18px;
+    padding: 5px 0;
+  }
+
+  .footerMenu .infoArea li:first-child,
+  .footerMenu .helpArea li:first-child {
+    font-size: 25px; /* Başlık boyutunu küçült */
+  }
+}
